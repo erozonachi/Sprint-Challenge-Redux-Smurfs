@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import FormContainer from './StyledComponents/FormContainer';
+import { connect } from 'react-redux';
 
 const initial = {
   name: '',
@@ -76,4 +77,6 @@ class SmurfForm extends Component {
   }
 }
 
-export default SmurfForm;
+const mapStateToProps = state => ({app: state.appState});
+
+export default connect(mapStateToProps, {})(SmurfForm);
