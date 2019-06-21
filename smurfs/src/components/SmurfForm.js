@@ -74,7 +74,11 @@ class SmurfForm extends Component {
             value={this.state.height}
             name="height"
           />
-          <button type="submit">{this.id? 'Edit Smurf' : 'Add to the village'}</button>
+          <button type="submit">
+            {this.id? 'Edit Smurf' : 'Add to the village'}
+            {this.props.app.updatingSmurf && '...'}
+            {this.props.app.addingSmurf && '...'}
+          </button>
           <button onClick={this.handleCancel}>Cancel</button>
         </form>
       </FormContainer>
