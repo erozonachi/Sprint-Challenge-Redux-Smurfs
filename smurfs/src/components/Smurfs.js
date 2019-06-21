@@ -12,6 +12,7 @@ function Smurfs(props) {
   return (
     <SmurfList>
       <h1>Smurf Village</h1>
+      {props.app.fetchingSmurfs && <div>Fetching Smurfs</div>}
       <ul>
         {props.app.smurfs.map(smurf => {
           return (
