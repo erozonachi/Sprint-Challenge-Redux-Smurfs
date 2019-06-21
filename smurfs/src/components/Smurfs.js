@@ -2,7 +2,7 @@ import React, {  } from 'react';
 import Smurf from './Smurf';
 import SmurfList from './StyledComponents/SmurfList';
 import { connect } from 'react-redux';
-import { deleteSmurf } from '../actions';
+import { getSmurfs, deleteSmurf } from '../actions';
 
 function Smurfs(props) {
   return (
@@ -32,4 +32,4 @@ Smurf.defaultProps = {
 
 const mapStateToProps = state => ({app: state.appState});
 
-export default connect(mapStateToProps, { deleteSmurf })(Smurfs);
+export default connect(mapStateToProps, { getSmurfs, deleteSmurf })(Smurfs);
