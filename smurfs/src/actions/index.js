@@ -71,3 +71,20 @@ export const deleteSmurf = (id) => dispatch => {
     });
   });
 }
+
+export const editSmurf = (smurf, id) => dispatch => {
+  dispatch({type: UPDATING});
+  Axios.put(`${url}/${id}`, smurf)
+  .then(response => {
+    dispatch({
+      type: SUCCESS,
+      payload: response.data,
+    });
+  })
+  .catch(err => {
+    dispatch({
+      type: FAILURE,
+      payload: {error: err.message},
+    });
+  });
+}
