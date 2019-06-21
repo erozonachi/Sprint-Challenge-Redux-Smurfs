@@ -22,9 +22,21 @@ In this challenge, you are to build the Smurfs village once again, only this tim
 
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
-- [ ] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
-- [ ] What is the difference between Application state and Component state? When would be a good time to use one over the other?
-- [ ] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+- [x] In your own words, describe `actions`, `reducers` and the `store` and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+
+- Actions are those occurrences that will trigger transitions/changes in an application state (store). They inform reducers about what has changed in the application state.
+
+- Reducers are pure functions that take the current state and an action as arguments and returns a new copy of state based on the action. They serve as a means of setting and updating the application state based on the action given.
+
+- A store is a JavaScript object that holds an application's information that may often change throughout the application's execution/usage life-cycle. It is the single source of truth because it's consistent, and can be directly connected from anywhere within the application.
+
+- [x] What is the difference between Application state and Component state? When would be a good time to use one over the other?
+
+Application state is leveraged on (via props) by two or more components within the application, while the component state is only utilized within the confinement of the own component. A state is best kept and maintain at the application level when two or more components depend on it, else it should live and be maintained within the component that uses it.
+
+- [x] Describe `redux-thunk`, what does it allow us to do? How does it change our `action-creators`?
+
+Redux-thunk is a redux middleware that makes using redux (which is synchronous by design) in an asynchronous way possible. With it, things like promises can be used within redux. It gives action creators the ability to perform asynchronous operations, basically; by returning a function that does things asynchronously.
 
 ## Project Set Up
 
