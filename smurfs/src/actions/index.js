@@ -9,6 +9,8 @@ export const DELETING = 'DELETING';
 export const SUCCESS = 'SUCCESS';
 export const FAILURE = 'FAILURE';
 
+const url = 'http://localhost:3333/smurfs';
+
 /*
   For this project you'll need at least 2 action creators for the main portion,
    and 2 more for the stretch problem.
@@ -19,3 +21,19 @@ export const FAILURE = 'FAILURE';
    U - updateSmurf
    D - deleteSmurf
 */
+export const getSmurfs = () => dispatch => {
+  dispatch({type: FETCHING});
+  Axios.get(url)
+  .then(response => {
+    dispatch({
+      type: SUCCESS,
+      payload: response.data,
+    });
+  })
+  .catch(err => {
+    dispatch({
+      type: FAILURE,
+      payload: {error: err.message},
+    });
+  })
+}
