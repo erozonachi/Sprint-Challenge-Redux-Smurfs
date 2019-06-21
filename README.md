@@ -70,8 +70,8 @@ This file contains an **API** that you are going to be interfacing with. Below i
 
 Your finished project must include all of the following requirements:
 
-- [ ] Start in the `index.js` file by following all the prompts there to ensure that `Redux-Thunk` is wired up properly.
-- [ ] Because `Redux-Thunk` is wired up as a middleware for this project. Be sure to utilize thunks when appropriate:
+- [x] Start in the `index.js` file by following all the prompts there to ensure that `Redux-Thunk` is wired up properly.
+- [x] Because `Redux-Thunk` is wired up as a middleware for this project. Be sure to utilize thunks when appropriate:
 
 ```js
 return dispatch => {
@@ -86,8 +86,8 @@ return dispatch => {
 
 ### GET '/smurfs'
 
-- [ ] Retrieve an array all the Smurfs in the Smurf DB by writing a `GET` to the endpoint `/smurfs`.
-- [ ] Double check that your response from the server is an array of smurfs.
+- [x] Retrieve an array all the Smurfs in the Smurf DB by writing a `GET` to the endpoint `/smurfs`.
+- [x] Double check that your response from the server is an array of smurfs.
 
 ```js
 [
@@ -102,7 +102,7 @@ return dispatch => {
 
 ### POST '/smurfs'
 
-- [ ] Design the functionality to add a smurf to the Smurf DB you'll need all three fields. `name`, `age`, and `height`.
+- [x] Design the functionality to add a smurf to the Smurf DB you'll need all three fields. `name`, `age`, and `height`.
 
 Example of the shape of data to be sent to the `POST` endpoint:
 
@@ -114,7 +114,7 @@ Example of the shape of data to be sent to the `POST` endpoint:
 }
 ```
 
-- [ ] Double check to make sure that a smurf is created correctly once your functionality is built out.
+- [x] Double check to make sure that a smurf is created correctly once your functionality is built out.
 
 Initially Brainey will be in the array, but it takes more than one smurf to make the village. Be sure to add a few smurfs to populate our smurf village.
 
@@ -145,7 +145,7 @@ The following two endpoints are here for you if you'd like to push yourselves a 
 
 ### PUT '/smurfs/123', where 123 is the Id of the smurf you want to modify
 
-- [ ] For this endpoint to work, you'll need an `id` added to the URL, and at least one field to update on the Smurf object. `name` `age` `height`.
+- [x] For this endpoint to work, you'll need an `id` added to the URL, and at least one field to update on the Smurf object. `name` `age` `height`.
 
 Example:
 
@@ -178,7 +178,7 @@ For this endpoint to work, all you need is an id sent up as part of the request 
 
 If your delete worked, you'll get a an array back with all of the smurfs but with your requested smurf removed.
 
-- [ ] You don't need any input beyond the url parameter of the smurf, so if we send up a delete request to `/smurfs/123` then you'll remove the smurf by that id.
+- [x] You don't need any input beyond the url parameter of the smurf, so if we send up a delete request to `/smurfs/123` then you'll remove the smurf by that id.
 
 Example:
 
