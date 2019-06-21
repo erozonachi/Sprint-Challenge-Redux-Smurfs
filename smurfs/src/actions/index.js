@@ -37,3 +37,20 @@ export const getSmurfs = () => dispatch => {
     });
   })
 }
+
+export const addSmurf = (newSmurf) => dispatch => {
+  dispatch({type: ADDING});
+  Axios.post(url, newSmurf)
+  .then(response => {
+    dispatch({
+      type: SUCCESS,
+      payload: response.data,
+    });
+  })
+  .catch(err => {
+    dispatch({
+      type: FAILURE,
+      payload: {error: err.message},
+    });
+  });
+}
