@@ -54,3 +54,20 @@ export const addSmurf = (newSmurf) => dispatch => {
     });
   });
 }
+
+export const deleteSmurf = (id) => dispatch => {
+  dispatch({type: DELETING});
+  Axios.delete(`${url}/${id}`)
+  .then(response => {
+    dispatch({
+      type: SUCCESS,
+      payload: response.data,
+    });
+  })
+  .catch(err => {
+    dispatch({
+      type: FAILURE,
+      payload: {error: err.message},
+    });
+  });
+}
