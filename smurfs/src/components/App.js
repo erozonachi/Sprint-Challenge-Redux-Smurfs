@@ -1,5 +1,10 @@
 import React, { Component } from 'react';
-import './App.css';
+import {BrowserRouter as Router, Route, NavLink, } from 'react-router-dom';
+
+import SmurfForm from './SmurfForm';
+import Smurfs from './Smurfs';
+import Smurf from './Smurf';
+import AppContainer from './StyledComponents/AppContainer';
 /*
  to wire this component up you're going to need a few things.
  I'll let you do this part on your own. 
