@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Smurf from './Smurf';
 import SmurfList from './StyledComponents/SmurfList';
+import { connect } from 'react-redux';
 
 class Smurfs extends Component {
   render() {
@@ -30,4 +31,4 @@ Smurf.defaultProps = {
  smurfs: [],
 };
 
-export default Smurfs;
+export default connect(() => ({}), {})(Smurfs);
