@@ -4,12 +4,13 @@ import './index.css';
 import App from './components/App';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
-import { createStore, applyMiddleware } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { smurfsReducer } from './reducers';
 
+const combinedReducers = combineReducers({appState: smurfsReducer})
 const store = createStore(
-  () => ({appState: smurfsReducer}),
+  combinedReducers,
   applyMiddleware(thunk, logger)
 );
 
