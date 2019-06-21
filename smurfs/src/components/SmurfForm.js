@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import FormContainer from './StyledComponents/FormContainer';
 import { connect } from 'react-redux';
+import { addSmurf, editSmurf } from '../actions';
 
 const initial = {
   name: '',
@@ -21,7 +22,7 @@ class SmurfForm extends Component {
   }
 
   getASmurf = (id) => {
-    return smurfs.filter((smurf) => smurf.id === parseInt(id,10));
+    return props.app.smurfs.filter((smurf) => smurf.id === parseInt(id,10));
   }
 
   addSmurf = event => {
@@ -29,7 +30,7 @@ class SmurfForm extends Component {
     if(this.state.name.trim() !== '' && 
       this.state.age.toString().trim() !== '' && 
       this.state.height.trim() !== '') {
-      this.id? this.props.editHandler({...this.state}, this.id) : this.props.addHandler({...this.state});
+      this.id? this.props.editSmurf({...this.state}, this.id) : this.props.addSmurf({...this.state});
     }
 
     this.setState({
@@ -83,4 +84,4 @@ class SmurfForm extends Component {
 
 const mapStateToProps = state => ({app: state.appState});
 
-export default connect(mapStateToProps, {})(SmurfForm);
+export default connect(mapStateToProps, { addSmurf, editSmurf })(SmurfForm);
