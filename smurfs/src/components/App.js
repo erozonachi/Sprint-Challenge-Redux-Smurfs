@@ -14,12 +14,31 @@ import AppContainer from './StyledComponents/AppContainer';
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <h1>SMURFS! 2.0 W/ Redux</h1>
-        <div>Welcome to your Redux version of Smurfs!</div>
-        <div>Start inside of your `src/index.js` file!</div>
-        <div>Have fun!</div>
-      </div>
+      <Router>
+        <AppContainer>
+          <nav>
+            <NavLink to='/'>Smurfs</NavLink>
+            <NavLink to='/smurf-form/ '>Add Smurf</NavLink>
+          </nav>
+          <Route 
+            exact
+            path='/' 
+            render={props => <Smurfs smurfs={smurfs} delHandler={deleteSmurf} {...props} />}
+          />
+          <Route 
+            path='/smurfs/:id' 
+            render={props => <Smurf {...getASmurf(props.match.params.id)[0]} delHandler={deleteSmurf} {...props} />}
+          />
+          <Route 
+            path='/smurf-form/:id' 
+            render={props => <SmurfForm 
+              addHandler={addSmurf} 
+              editHandler={editSmurf} 
+              getSmurf={getASmurf}
+              {...props} />}
+          />
+        </AppContainer>
+      </Router>
     );
   }
 }
