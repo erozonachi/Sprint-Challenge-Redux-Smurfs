@@ -12,12 +12,16 @@ class SmurfForm extends Component {
   constructor(props) {
     super(props);
     this.id = this.props.match.params.id.trim();
-    const smurf = this.id? this.props.getSmurf(this.id)[0] : initial;
+    const smurf = this.id? this.getSmurf(this.id)[0] : initial;
     this.state = {
       name: smurf.name,
       age: smurf.age,
       height: smurf.height,
     };
+  }
+
+  getASmurf = (id) => {
+    return smurfs.filter((smurf) => smurf.id === parseInt(id,10));
   }
 
   addSmurf = event => {
