@@ -1,10 +1,14 @@
-import React, {  } from 'react';
+import React, { useEffect } from 'react';
 import Smurf from './Smurf';
 import SmurfList from './StyledComponents/SmurfList';
 import { connect } from 'react-redux';
 import { getSmurfs, deleteSmurf } from '../actions';
 
 function Smurfs(props) {
+  useEffect(() => {
+    props.getSmurfs();
+  }, []);
+  
   return (
     <SmurfList>
       <h1>Smurf Village</h1>
