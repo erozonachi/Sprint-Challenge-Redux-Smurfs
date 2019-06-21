@@ -22,7 +22,7 @@ class SmurfForm extends Component {
   }
 
   getASmurf = (id) => {
-    return props.app.smurfs.filter((smurf) => smurf.id === parseInt(id,10));
+    return this.props.app.smurfs.filter((smurf) => smurf.id === parseInt(id,10));
   }
 
   addSmurf = event => {
