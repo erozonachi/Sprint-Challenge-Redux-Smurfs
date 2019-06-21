@@ -31,4 +31,6 @@ Smurf.defaultProps = {
  smurfs: [],
 };
 
-export default connect(() => ({}), {})(Smurfs);
+const mapStateToProps = state => ({app: state.appState});
+
+export default connect(mapStateToProps, {})(Smurfs);
